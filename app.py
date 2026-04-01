@@ -359,6 +359,8 @@ class MainWindow(QMainWindow):
                 cwd=str(Path(__file__).parent),
                 capture_output=True,
                 text=True,
+                encoding='utf-8',
+                errors='replace',
                 timeout=180
             )
 
