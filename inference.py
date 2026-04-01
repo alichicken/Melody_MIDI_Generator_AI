@@ -429,7 +429,7 @@ def load_model_and_tokenizer():
     model.eval()
 
     # 从保存的 tokenizer.json 加载 tokenizer
-    tokenizer = REMI.from_pretrained(str(MODEL_DIR))
+    tokenizer = REMI.from_pretrained(str(MODEL_DIR), proxies=None, resume_download=True)
 
     print(f"模型参数量: {sum(p.numel() for p in model.parameters()) / 1e6:.2f}M")
     print(f"Tokenizer vocab_size: {tokenizer.vocab_size}")
